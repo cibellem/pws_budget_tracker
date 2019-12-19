@@ -9,11 +9,14 @@ const FILES_TO_CACHE = [
     "/index.html",
     "/assets/css/style.css",
     "/assets/js/index.js",
-    "/assets/js/db.js"
+    "/assets/js/db.js",
+    "/manifest.webmanifest"
 
 ];
 
 const CACHE_NAME = "static-cache-v2";
+
+//elements that are inside on my db and require an api call to render it
 const DATA_CACHE_NAME = "data-cache-v1";
 
 // install and register Service Worker 

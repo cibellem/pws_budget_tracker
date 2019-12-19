@@ -26,8 +26,9 @@ request.onerror = function (event) {
 };
 
 function saveRecord(record) {
+  console.log(record);
 
-  const transaction = db.transaction("pending", "readWrite");
+  const transaction = db.transaction("pending", "readwrite");
   const store = transaction.objectStore("pending");
   store.add(record)
   // create a transaction on the pending db with readwrite access
@@ -55,15 +56,10 @@ function checkDatabase() {
       })
         .then(response => response.json())
         .then(() => {
-
-
-          const transaction = db.transaction("pending", "readwrite");
+          // delete records if successful
+          const transaction = db.transaction(["pending"], "readwrite");
           const store = transaction.objectStore("pending");
           store.clear();
-          // if successful, open a transaction on your pending db
-          // access your pending object store
-          // clear all items in your store
-
         });
     }
   };

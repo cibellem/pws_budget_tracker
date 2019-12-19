@@ -143,12 +143,12 @@ function sendTransaction(isAdding) {
     });
 }
 
-document.querySelector("#add-btn").onclick = function() {
+document.querySelector("#add-btn").onclick = function () {
   event.preventDefault()
   sendTransaction(true);
 };
 
-document.querySelector("#sub-btn").onclick = function() {
+document.querySelector("#sub-btn").onclick = function () {
   event.preventDefault()
   sendTransaction(false);
 };
